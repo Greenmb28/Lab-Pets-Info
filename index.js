@@ -37,21 +37,25 @@ const petsData = [
     }
 ];
 
- 
 
-
-const showInfo =(selectedPetInfo)=> 
+const showInfo =()=> 
     {
-        
+        let petNumb = document.querySelector("#petNum").value;
+         petNumb = parseInt(petNumb) - 1;
+         let selectedPetInfo = document.querySelector(".selectedPetInfo");
+        let pet = petsData[petNumb];
        
-        let str = ` ${[selectedPetInfo].petName} the ${[selectedPetInfo].specie} 
-        is ${[selectedPetInfo].age} years old. This ${[selectedPetInfo].specie} weights
-         ${[selectedPetInfo].weightInKilos} kilos
-        and is a  ${[selectedPetInfo].breed} breed`;
+       
+        let str = ` ${pet.petName} the ${pet.specie} 
+        is ${pet.age} years old. This ${pet.specie} weights
+         ${pet.weightInKilos} kilos
+        and is a  ${pet.breed} breed`;
     
     
-        let pet = document.querySelector(".str");
+        let dogs = document.querySelector(".str");
     
-       pet.innerHTML =str;
+       dogs.innerHTML =str;
+       console.log(str);
     
     }
+
